@@ -6,11 +6,11 @@ You must not delete or change the name of any folder / files that already exist 
 
 The different syntaxes this framework implements are as following:
 
-# Double brackets
+## Double brackets
 {{ yourphpfunctionhere(); }} 
 It allows you to call php functions of the controller withing the .html file.
 
-# Imports
+## Imports
 There are two types of imports
 
 1 - Service
@@ -22,6 +22,6 @@ Templates are static parts of .html files, they can be imported within .html by 
 [import Template[templatename]]
 
 
-# To keep in mind
+### To keep in mind
 
 This framework was developed by me and a friend / co-worker to achieve a specific need, you may encounter troubles using it, so I wouldnt recommend using it even if it can be really useful to set up small websites that dont require huge framework control such as symphony or zend.
