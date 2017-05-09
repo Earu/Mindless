@@ -15,11 +15,15 @@ It allows you to call php functions of the controller withing the .html file.
 There are two types of imports
 
 1 - Service
+
 The services you create in /public/service/ can be imported within an .html file by doing:
+
 [import Service[servicename]]
 
 2 - Templates
+
 Templates are static parts of .html files, they can be imported within .html by doing:
+
 [import Template[templatename]]
 
 
