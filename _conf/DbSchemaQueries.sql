@@ -1,0 +1,1 @@
+--This will contain the structure of your database ie create table stuff and such

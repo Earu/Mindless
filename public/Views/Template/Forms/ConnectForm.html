@@ -1,0 +1,62 @@
+<!-- you can create forms that way with mindless, JSON structure basically-->
+[FORM]{
+"name"   : "connectform",
+"handle" : "OnAuthentificate"
+}
+
+[DIV]{
+  "name"   : "divlogin",
+  "class"  : "form-group",
+  "parent" : "connectform"
+}
+
+[LABEL]{
+  "name"   : "labellogin",
+  "for"    : "LoginMail",
+  "HTML"   : "Identifiant de connexion",
+  "parent" : "divlogin"
+}
+
+[INPUT]{
+  "name"  : "login",
+  "type"  : "text",
+  "class" : "form-control",
+  "id"    : "LoginMail",
+  "placeholder" : "Email ou nom d'utilisateur",
+  "parent"      : "divlogin",
+  "required" : ""
+}
+
+[DIV]{
+  "name"   : "divpassword",
+  "class"  : "form-group",
+  "parent" : "connectform"
+}
+
+[LABEL]{
+  "name"   : "labelpassword",
+  "for"    : "LoginPassword",
+  "HTML"   : "Mot de passe",
+  "parent" : "divpassword"
+}
+
+[INPUT]{
+  "name"  : "password",
+  "type"  : "password",
+  "class" : "form-control",
+  "id"    : "LoginPassword",
+  "placeholder" : "Mot de passe",
+  "parent"      : "divpassword",
+  "required" : ""
+}
+[HR]{
+  "name" : "spacerdiv",
+  "parent" : "connectform"
+}
+[BUTTON]{
+  "name"   : "connectbutton",
+  "type"   : "submit",
+  "class"  : "center-block ConnectButton",
+  "HTML"   : "Connexion",
+  "parent" : "connectform"
+}
