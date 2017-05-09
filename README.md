@@ -8,6 +8,7 @@ The different syntaxes this framework implements are as following:
 
 ### PHP function calls
 {{ yourphpfunctionhere(); }} 
+
 It allows you to call php functions of the controller withing the .html file.
 
 ### Imports
