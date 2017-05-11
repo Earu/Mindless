@@ -5,7 +5,7 @@ class HtmlWriter{
     echo "<script>window.location.href = '" . $url . "';</script>";
   }
   public static function DataToJS($varName, $data){
-    echo "<script>var " . $varName . " = JSON.parse('" . json_encode($data) ."'); console.log('" . $varName . " variable created');</script>";
+    echo "<script>var " . $varName . " = JSON.parse('" . json_encode($data) ."');</script>";
   }
   public static function ClientLogStyle($content, $style){
     if(!$GLOBALS["ENV_PRODUCTION"]){

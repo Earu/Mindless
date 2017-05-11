@@ -70,11 +70,12 @@ class ImbricableObject extends HtmlObject{
     foreach($this->attributes as $attribute => $value){
       $html .= $attribute . "='" . $value . "' ";
     }
-    $html .= '>';
+    $html .= '>' . (isset($this->htmlContent) ? $this->htmlContent : "");
+
     foreach($this->content as $htmlObject){
       $html .= $htmlObject->ToHtml();
     }
-    $html .= '</div>';
+    $html .= '</' . $this->type . '>';
     return $html;
   }
 }
