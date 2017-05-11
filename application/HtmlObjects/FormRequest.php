@@ -12,6 +12,7 @@ class FormRequest{
   public $handleName;
 
   public function __construct($handleName, $form){
+    HtmlWriter::ClientLogStyle("[PHP] Generate FormRequest for " . $handleName, "color: orange;");
     $this->session = Session::GetInstance();
     $this->handleName = $handleName;
 

@@ -27,7 +27,7 @@ class ViewManager{
   private function PreparePage($view){
     global $TemplateManager;
     $importTemplatePattern = "/\[import\sTemplate\[\w*\]\]/";
-    $objectsPattern = "/(\[\w*\]\{){1}[(a-zA-Z0-9éèàâ\s\t\n\r\-,:\"\'\@\/\\\{\}\.\+]*\}{1}/";
+    $objectsPattern = "/(\[\w*\]\{){1}[(a-zA-Z0-9éèàâ\s\t\n\r\-,:\"\'\(\)\@\/\\\{\}\.\+]*\}{1}/";
 
     //For all pages
     $pageContent = str_replace(["\t", "\n", "\r"], '', file_get_contents(__DIR__ . "/../../public/Views/" . $view->url));

@@ -6,6 +6,3 @@ RewriteCond %{REQUEST_URI} !postForm.php
 RewriteCond %{REQUEST_URI} !.*\.{1}((css)|(jpg)|(png)|(js)|(.otf)|(.ttf))
 RewriteCond %{REQUEST_URI} !Lib
 RewriteRule	^.*$	mainController.php?page=%{REQUEST_URI}&%{QUERY_STRING} [L]
-
-#this is apache config to allow the requesting of certain, files you will eventually have to redo this config 
-#if you are using another webserver

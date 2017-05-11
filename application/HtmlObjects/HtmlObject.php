@@ -3,10 +3,11 @@
 use \View\HtmlWriter;
 
 class HtmlObject{
-  private static $imbricableObjects = ["DIV", "HEADER", "FOOTER", "SPAN", "P", "FORM"];
+  private static $imbricableObjects = ["DIV", "HEADER", "FOOTER", "SPAN", "P", "FORM", "SELECT", "OPTION", "TEXTAREA"];
   public $type;
   public $name;
   public $attributes;
+  public $htmlContent;
   public $parent;
 
   public function __construct($type, $parameters){
@@ -24,20 +25,22 @@ class HtmlObject{
       $this->parent = $parameters->parent;
       unset($parameters->parent);
     }
+    if(isset($parameters->HTML)){
+      $this->htmlContent = $parameters->HTML;
+      unset($parameters->HTML);
+    }
     $this->attributes = $parameters;
   }
   public function ToHtml(){
     $result = '<' . $this->type;
     foreach($this->attributes as $key => $value){
-      if($key != 'HTML' && $key != "required"){
-        $result .= ' ' . $key .'="' . $value . '"';
-      }
+      $result .= ' ' . $key .'="' . $value . '"';
     }
     if(isset($this->attributes->required)){
       $result .= " required";
     }
 
-    $result .= '>' . (isset($this->attributes->HTML) ? $this->attributes->HTML : '') . '</' . $this->type . '>';
+    $result .= '>' . (isset($this->htmlContent) ? $this->htmlContent : '') . '</' . $this->type . '>';
     return $result;
   }
   public static function IsImbricable($name){

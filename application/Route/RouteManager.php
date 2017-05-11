@@ -5,11 +5,13 @@ use \View\HtmlWriter;
 use \Session\Session;
 
 class RouteManager{
+  private static $self;
   private $default;
   private $routes = array();
 
   //Initialisation du RouteManager
   public function __construct(){
+    $self = $this;
     //Chargement des routes par inclusion du Provider
     include __DIR__ . '/../../RoutesProvider.php';
   }
@@ -26,6 +28,11 @@ class RouteManager{
   }
   public function GetDefault(){
     return $this->default;
+  }
+  public function GetAll(){
+    $routes = $this->routes;
+    array_push($routes, $this->default);
+    return $routes;
   }
   //Affiche la page selon l'url grâce à la liste des routes
   public function Redirect($url){
@@ -89,6 +96,10 @@ class RouteManager{
       }
     }
     return $found;
+  }
+
+  public static function GetInstance(){
+    return (self::$self === null ? new RouteManager() : self::$self);
   }
 }
 
