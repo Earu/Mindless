@@ -33,17 +33,15 @@ $this->RemoveException(url)
 url is a string
 */
 
-$this->SetCurrentUserType(\Objects\User::GetType(\Session\Session::GetInstance()->GetData("user")));
+$this->SetCurrentUserType( $usertypevarhere );
 
 $this->AddException("login");
-$this->AddException("disconnect");
-$this->AllowAll("championship");
-$this->AllowAll("showTeams");
-$this->AddPerm("clubList",0);
-$this->AddPerm("handleDelays",2);
-$this->AddPerm("handleDelays",1);
-$this->AddPerm("reporterManagement",1);
-$this->RemovePerm("reporterManagement",0);
+
+$this->AllowAll("home");
+
+$this->RemovePerm("home",5);
+
+$this->AddPerm("page",0);
 
 $this->SetDefaultPerms(0);
 
