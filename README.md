@@ -26,6 +26,50 @@ Templates are static parts of .html files, they can be imported within .html by 
 
 [import Template[templatename]]
 
+### Routes,Templates,Permissions
+
+1 - Routes
+
+Routes can be configured inside the RouteProvider.php file, you can assign an url to a controller and a view
+
+2 - Templates
+
+To use templates you need to give them names, this can be done in TemplateProvider.php
+
+3 - Permissions
+
+Permissions function accordingly to the config you will do in Permissions.php, and relatively to account types, you can add account types in "_conf/Constants.php _" by adding a new value inside $ACCOUNT_TYPE constant.
+
+### Secured forms
+
+To create a secured form you must create html elements like such:
+
+
+[HTMLELEMENT]{
+"name" : "htmlelement",
+"attribute" : "value"
+}
+
+
+Attributes depend on what html element you choosed.
+A created html element must always have a name attribute.
+
+
+Mindless adds some new attributes as well:
+
+
+->[input]minChar(int) checks if the string inputed has at least a specific number of chars
+
+->[input]maxChar(int) checks if the string inputed has less than a specific number of chars
+
+->[all]parent(string) set the parent of the html element you created to the one with the specified name
+
+->[form]handle(string) gets the name of the php function of the controller object to be executed when sending the form
+
+->[all-form]required(void) makes the html element required to complete the form both client and server side ( "required" : "")
+
+->[all-form]HTML(string) the html content to be included between the tags of the html element
+
 
 #### To keep in mind
 
