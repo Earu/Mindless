@@ -5,7 +5,9 @@ You must work under the public folder.
 The different syntaxes this framework implements are as following:
 
 ### PHP function calls
-```{{ yourphpfunctionhere(); }} ```
+```
+{{ yourphpfunctionhere(); }} 
+```
 The above allows you to call php functions of the controller withing the .html file.
 
 ### Imports
@@ -51,29 +53,17 @@ An html element must always have a name attribute.
 
 Mindless adds some new attributes as well:
 
-**[input]minChar(int)** 
+- **[input] minChar (int)** : *checks if the string inputed has at least a specific number of chars*
 
-*checks if the string inputed has at least a specific number of chars*
+- **[input] maxChar (int)** : *checks if the string inputed has less than a specific number of chars*
 
-**[input]maxChar(int)** 
+- **[all]parent(string)** : *set the parent of the html element you created to the one with the specified name*
 
-*checks if the string inputed has less than a specific number of chars*
+- **[form]handle(string)** : *gets the name of the php function of the controller object to be executed when sending the form*
 
-**[all]parent(string)** 
+- **[all-form]required(void)** : *makes the html element required to complete the form both client and server side ( "required" : "")*
 
-*set the parent of the html element you created to the one with the specified name*
-
-**[form]handle(string)** 
-
-*gets the name of the php function of the controller object to be executed when sending the form*
-
-**[all-form]required(void)** 
-
-*makes the html element required to complete the form both client and server side ( "required" : "")*
-
-**[all-form]HTML(string)** 
-
-*the html content to be included between the tags of the html element*
+- **[all-form]HTML(string)** : *the html content to be included between the tags of the html element*
 
 #### To keep in mind
 This framework was developed by me and a friend / co-worker to achieve a specific need, you may encounter troubles using it, so I wouldnt recommend using it even if it can be really useful to set up small websites that dont require huge framework control such as symphony or zend.
