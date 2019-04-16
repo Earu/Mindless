@@ -1,76 +1,79 @@
 # Mindless
 
-You must work under the public folder, and it is strongly recommandended you browse through the files that already exists.
-You must not delete or change the name of any folder / files that already exist unless you are the author of those.
-
+You must work under the public folder.
 
 The different syntaxes this framework implements are as following:
 
 ### PHP function calls
-{{ yourphpfunctionhere(); }} 
-
-It allows you to call php functions of the controller withing the .html file.
+```{{ yourphpfunctionhere(); }} ```
+The above allows you to call php functions of the controller withing the .html file.
 
 ### Imports
-There are two types of imports
+There are two types of imports:
 
-1 - Service
+- Service
 
 The services you create in /public/service/ can be imported within an .html file by doing:
-
+```
 [import Service[servicename]]
+```
 
-2 - Templates
+- Templates
 
 Templates are static parts of .html files, they can be imported within .html by doing:
-
+```
 [import Template[templatename]]
+```
 
 ### Routes,Templates,Permissions
 
-1 - Routes
+- Routes
+Routes can be configured inside the **RouteProvider.php** file, you can assign an url to a controller and a view
 
-Routes can be configured inside the RouteProvider.php file, you can assign an url to a controller and a view
+- Templates
+To use templates you need to give them names, this can be done in **TemplateProvider.php**
 
-2 - Templates
-
-To use templates you need to give them names, this can be done in TemplateProvider.php
-
-3 - Permissions
-
-Permissions function accordingly to the config you will do in Permissions.php, and relatively to account types, you can add account types in "_conf/Constants.php _" by adding a new value inside $ACCOUNT_TYPE constant.
+- Permissions
+Permissions work accordingly to the config in **Permissions.php**, and relatively to account types, you can add account types in **\_conf/Constants.php** by adding a new value inside $ACCOUNT_TYPE constant.
 
 ### Secured forms
-
 To create a secured form you must create html elements like such:
 
-
+```
 [HTMLELEMENT]{
 "name" : "htmlelement",
 "attribute" : "value"
 }
+```
 
-
-Attributes depend on what html element you choosed.
-A created html element must always have a name attribute.
-
+Attributes depend on what html element you picked.
+An html element must always have a name attribute.
 
 Mindless adds some new attributes as well:
 
+**[input]minChar(int)** 
 
-->[input]minChar(int) checks if the string inputed has at least a specific number of chars
+*checks if the string inputed has at least a specific number of chars*
 
-->[input]maxChar(int) checks if the string inputed has less than a specific number of chars
+**[input]maxChar(int)** 
 
-->[all]parent(string) set the parent of the html element you created to the one with the specified name
+*checks if the string inputed has less than a specific number of chars*
 
-->[form]handle(string) gets the name of the php function of the controller object to be executed when sending the form
+**[all]parent(string)** 
 
-->[all-form]required(void) makes the html element required to complete the form both client and server side ( "required" : "")
+*set the parent of the html element you created to the one with the specified name*
 
-->[all-form]HTML(string) the html content to be included between the tags of the html element
+**[form]handle(string)** 
 
+*gets the name of the php function of the controller object to be executed when sending the form*
+
+**[all-form]required(void)** 
+
+*makes the html element required to complete the form both client and server side ( "required" : "")*
+
+**[all-form]HTML(string)** 
+
+*the html content to be included between the tags of the html element*
 
 #### To keep in mind
-
 This framework was developed by me and a friend / co-worker to achieve a specific need, you may encounter troubles using it, so I wouldnt recommend using it even if it can be really useful to set up small websites that dont require huge framework control such as symphony or zend.
